@@ -1,2 +1,2 @@
-# readme-nlp-classification
-Classifying READMEs by programming language.
+# README Classification
+### An NLP multi-label classification project
