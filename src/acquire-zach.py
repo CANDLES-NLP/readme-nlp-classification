@@ -14,6 +14,7 @@ import os
 import json
 from typing import Dict, List, Optional, Union, cast
 import requests
+import utils
 
 from env import github_token, github_username
 
@@ -24,13 +25,9 @@ from env import github_token, github_username
 # TODO: Add your github username to your env.py file under the variable `github_username`
 # TODO: Add more repositories to the `REPOS` list below.
 
-REPOS = [
-    "gocodeup/codeup-setup-script",
-    "gocodeup/movies-application",
-    "torvalds/linux",
-]
-
 headers = {"Authorization": f"token {github_token}", "User-Agent": github_username}
+
+REPOS = utils.json_repos()
 
 if headers["Authorization"] == "token " or headers["User-Agent"] == "":
     raise Exception(
@@ -91,17 +88,18 @@ def process_repo(repo: str) -> Dict[str, str]:
     Takes a repo name like "gocodeup/codeup-setup-script" and returns a
     dictionary with the language of the repo and the readme contents.
     """
-    contents = get_repo_contents(repo)
-    readme_download_url = get_readme_download_url(contents)
-    if readme_download_url == "":
-        readme_contents = ""
-    else:
-        readme_contents = requests.get(readme_download_url).text
-    return {
-        "repo": repo,
-        "language": get_repo_language(repo),
-        "readme_contents": readme_contents,
-    }
+    try:
+        contents = get_repo_contents(repo)
+        readme_download_url = get_readme_download_url(contents)
+        if readme_download_url == "":
+            readme_contents = ""
+        else:
+            readme_contents = requests.get(readme_download_url).text
+        lang = get_repo_language(repo)
+    except:
+        readme_contents, lang = '', ''
+
+    return {"repo": repo, "language": lang, "readme_contents": readme_contents}
 
 
 def scrape_github_data() -> List[Dict[str, str]]:
