@@ -1,4 +1,4 @@
-rom requests import get
+from requests import get
 import pandas as pd
 import env
 import utils
@@ -20,8 +20,7 @@ def repo_df():
                 if file['name'].lower().startswith('readme'):
                     rm = get(file['download_url']).text
             repo_data.append({'repo': repo, 'language': lang, 'readme': rm})
-        except:
-            continue        
+        except: continue        
     return pd.DataFrame(repo_data)
 
 

@@ -12,7 +12,7 @@ def json_repos():
             repos.append(r[18:])
     #truncate list
     idx = random.randint(low=0, high=len(data),
-                         size=5)
+                         size=500)
     repos = [repos[i] for i in idx]
     return repos
 
