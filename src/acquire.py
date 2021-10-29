@@ -19,7 +19,7 @@ def repo_df():
             for file in get(url+'/contents', headers=hdr).json():
                 if file['name'].lower().startswith('readme'):
                     rm = get(file['download_url']).text
-            repo_data.append({'repo': repo, 'language': lang, 'readme': rm})
+            repo_data.append({'repo': repo,'language': lang, 'readme': rm})
         except: continue        
     return pd.DataFrame(repo_data)
 

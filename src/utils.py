@@ -1,22 +1,19 @@
 import json
-from numpy import random
 
 def json_repos():
-    """Read in JSON trending repos
+    """Read in JSON repos and cutoff at 106 per langauge
     """
-    with open('2016_trending.json') as f:
-        data = json.load(f)
+    with open('2016_trending.json') as f:data = json.load(f)
     repos = []
     for l in data:
-        for r in data[l]:
+        if len(data[l]) < 100 or l=='None':
+            continue
+        for ix, r in enumerate(data[l]):
             repos.append(r[18:])
-    #truncate list
-    idx = random.randint(low=0, high=len(data),
-                         size=700)
-    repos = [repos[i] for i in idx]
+            if ix > 105: break
     return repos
 
 
 if __name__ == "__main__":
-    data= json_repos()
-    print(data, len(data))
+    data = json_repos()
+    print(data[:5], len(data))
