@@ -138,3 +138,62 @@ plt.rc('font', size=16)
  .plot.barh(stacked = True, width = 1, ec = 'k')
 )
 plt.title('% of Go vs all for the most common 20 words')
+
+# =============================================================================
+# Looking at Bigrams
+# =============================================================================
+
+# =============================================================================
+# #Go Bigrams
+# =============================================================================
+list(nltk.bigrams(go_words.split()))
+
+# what are the most common bigrams? by language bigrams? 
+# visualize 20 most common bigrams, most common by language bigrams
+# ngrams
+
+# Find the most common bigram and then find a representative text
+
+pd.Series(nltk.bigrams(go_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common Go bigrams')
+
+# =============================================================================
+# Python Birgrams
+# =============================================================================
+pd.Series(nltk.bigrams(python_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common Python bigrams')
+
+
+# =============================================================================
+# Java Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(java_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common Java bigrams')
+
+# =============================================================================
+# C++ Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(cplus_plus_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common C++ bigrams')
+
+
+# =============================================================================
+# Javascript Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(javascript_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common Javascript bigrams')
+
+
+# =============================================================================
+# Swift Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(swift_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common Swift bigrams')
+
+
+
+# =============================================================================
+# C Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(c_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common C bigrams')
