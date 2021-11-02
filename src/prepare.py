@@ -25,9 +25,7 @@ def process_readmes(df):
     freqs = df.language.value_counts().rename('lang_freq')
     df = df.merge(freqs.to_frame(), left_on='language', right_index=True)
     df = df[df.lang_freq >= 90]
-    
     return df
-
 
 if __name__ == "__main__":
     df = process_readmes(pd.read_csv('trending.csv'))
