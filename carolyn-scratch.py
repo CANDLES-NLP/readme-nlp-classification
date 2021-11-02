@@ -197,3 +197,17 @@ plt.title('Top 10 most common Swift bigrams')
 # =============================================================================
 pd.Series(nltk.bigrams(c_words.split())).value_counts().head(10).plot.barh()
 plt.title('Top 10 most common C bigrams')
+
+
+# =============================================================================
+# All Bigrams
+# =============================================================================
+pd.Series(nltk.bigrams(all_words.split())).value_counts().head(10).plot.barh()
+plt.title('Top 10 most common bigrams from all words')
+
+
+
+
+
+
+
