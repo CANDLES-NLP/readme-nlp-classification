@@ -125,3 +125,16 @@ word_counts.sort_values('all', ascending=False).head(20)[['Go', 'Python', 'Java'
 plt.title('Count by Language for the top 20 most frequent words')
 
 
+
+
+plt.figure(figsize=(16, 9))
+plt.rc('font', size=16)
+
+(word_counts.sort_values('all', ascending=False)
+ .head(20)
+ .apply(lambda row: row/row['all'], axis = 1)
+ .drop(columns = 'all')
+ .sort_values(by = 'Go')
+ .plot.barh(stacked = True, width = 1, ec = 'k')
+)
+plt.title('% of Go vs all for the most common 20 words')
