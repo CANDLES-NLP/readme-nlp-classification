@@ -1,5 +1,5 @@
 # README Classification
-### A NLP multi-label classification project
+### NLP Multi-Label Classification Project
 
 # C.A.N.D.L.E.S
 
@@ -7,8 +7,6 @@
 ### Carolyn Davis
 ### Elihezer Lopez
 ### Steven Newton
-
-- For this project, you will be scraping data from GitHub repository README files. The goal will be to build a model that can predict what programming language a repository is, given the text of the README file.
 
 # Executive Summary
 
@@ -48,7 +46,6 @@
     
     - Do different programming languages use a different number of unique words?
 
-
 ## Modeling
 
 - Transform your documents into a form that can be used in a machine learning model. You should use the programming language of the repository as the label to predict.
@@ -59,15 +56,42 @@
 
 # Data Dictionary
 
+| Column        | Description          | Type   |
+| ------------- |:--------------------:|:------:|
+| repo          | name of repository   | object |
+| language      | coding language      | object |
+| readme        | text from readme     | object |
+| words         | word count in readme |  int64 |
+| lang_freq     | language frequency   |  int64 |
 
 
 # Conclusion
+- In Conclusion...
 
 # Next Steps
+a. 
+
+b.
+
+c.
+
 
 ## To Recreate This Project
 
-- Make a copy of the final notebook, run each cell, and adjust any parameters as desired
+- You will need your own env file with database credentials along with all the necessary files listed below to run the final group project notebook.
+
+- Read this README.md
+
+- Make a github personal access token:
+1. Go here and generate a personal access token https://github.com/settings/tokens
+
+2. Save it in your env.py file under the variable `github_token` 
+
+3. Add your github username to your env.py file under the variable `github_username`
+
+- Download the group notebook, acquire.py, and prepare.py files into your working directory
+
+- Run the final group notebook and adjuct parameters as desired
 
 ## Sources
-- 
+- https://github.com/trending
