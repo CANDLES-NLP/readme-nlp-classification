@@ -5,12 +5,11 @@
 <img src="img/languages.png" width="800"/>
 
 ---
-- [Executive summary](#executive-summary)
-- [Data dictionary](#data-dictionary)
-- [Data pipeline](#data-pipeline)
+- [Executive Summary](#executive-summary)
+- [Data Dictionary](#data-dictionary)
+- [Data Science Pipeline](#data-science-pipeline)
 - [Hypotheses](#hypotheses)
 - [Results](#results)
-
 
 
 # Executive Summary
@@ -29,6 +28,16 @@
 
 - Google slides suitable for a general audience that summarize your findings. Include a well-labelled visualization in your slides.
 
+# Data Dictionary
+
+| Column        | Description          | Type   |
+| ------------- |:--------------------:|:------:|
+| repo          | name of repository   | object |
+| language      | coding language      | object |
+| readme        | text from readme     | object |
+| words         | word count in readme |  int64 |
+| lang_freq     | language frequency   |  int64 |
+
 # Data Science Pipeline
 
 ## Planning
@@ -38,7 +47,7 @@
 - The necessay python code was written to extract the text of the README file for each page, and the primary language of the repository and stored in an acquire.py file.
 
 ## Prepare
-- A prepare.py file was created with functions to process the README text data and store as a .csv
+- A prepare.py file was created with functions to process the README text data and store as a .csv 
 
 ## Explore
 - Explore the data scraped from Github trending repositories:
@@ -57,21 +66,27 @@
 
 - Try fitting several different models and using several different representations of the text (e.g. a simple bag of words, then also the TF-IDF values for each).
 
-*Figure 1.* Plot of the best 5-fold cross-validation scores after performing a grid search on various TF-IDF vectorizer and classification model hyperparameters. A random forest model perfored best.
+Classification models used:
+
+* Stratified random (baseline)
+* Naive-Bayes
+* Logistic regression
+* k-nearest neighbors
+* Random forest
+
+*Figure 1.* Plot of the best 5-fold cross-validation scores after performing a grid search on various TF-IDF vectorizer and classification model hyperparameters. A random forest model performed best.
 
 <img src="img/cvscores.png" width="550"/>
 
 - Build a function that will take in the text of a README file, and tries to predict the programming language.
 
-# Data Dictionary
+# Hypotheses
 
-| Column        | Description          | Type   |
-| ------------- |:--------------------:|:------:|
-| repo          | name of repository   | object |
-| language      | coding language      | object |
-| readme        | text from readme     | object |
-| words         | word count in readme |  int64 |
-| lang_freq     | language frequency   |  int64 |
+$H_1$ Python programmers have the most comprehensive documentation and therefore the longest readmes.
+
+$H_1$ The length of the README varies by programming language.
+
+$H_1$ Go programmers use the largest vocabulary as measured by the number of unique words.
 
 # Results
 
