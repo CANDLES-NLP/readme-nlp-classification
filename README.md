@@ -1,12 +1,17 @@
-# README Classification
-### NLP Multi-Label Classification Project
+# Predicting GitHub repo language from READMEs
+---
+### An NLP project by James Allen, Carolyn Davis, Elihezer Lopez, & Steven Newton, Cooperative Analysts of Noteworthy Data, Languages, & other Esteemed Subjects (CANDLES)
 
-# C.A.N.D.L.E.S
+<img src="img/languages.png" width="800"/>
 
-### James Allen
-### Carolyn Davis
-### Elihezer Lopez
-### Steven Newton
+---
+- [Executive summary](#executive-summary)
+- [Data dictionary](#data-dictionary)
+- [Data pipeline](#data-pipeline)
+- [Hypotheses](#hypotheses)
+- [Results](#results)
+
+
 
 # Executive Summary
 
@@ -52,6 +57,10 @@
 
 - Try fitting several different models and using several different representations of the text (e.g. a simple bag of words, then also the TF-IDF values for each).
 
+*Figure 1.* Plot of the best 5-fold cross-validation scores after performing a grid search on various TF-IDF vectorizer and classification model hyperparameters. A random forest model perfored best.
+
+<img src="img/cvscores.png" width="550"/>
+
 - Build a function that will take in the text of a README file, and tries to predict the programming language.
 
 # Data Dictionary
@@ -64,6 +73,18 @@
 | words         | word count in readme |  int64 |
 | lang_freq     | language frequency   |  int64 |
 
+# Results
+
+Performance on test data.
+
+| model         | F1 |       accuracy    | support |
+| ------------- |:-----------:|:--------:|:--------:|
+| Stratified random  | .12     | .12     | 155 |
+| Random forest      | **.75** | **.75** | 155 |
+
+*Figure 1.* Confusion matrix showing performance of best random forest model across all seven classes. Swift and Go languages had the highest F1 scores while C and C++ had the lowest. 
+
+<img src="img/rf_confmat.png" width="550"/>
 
 # Conclusion
 - In Conclusion...
