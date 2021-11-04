@@ -18,10 +18,14 @@
 - Build a model that can predict the programming language of a repository on Github, given the text of the README file.
 
 ## Takeaways:
-- Takeaways
+- Identified 7 Coding Languages (C, C++, Go, Java, JavaScript, Python, Swift)
 
-## Recomendations:
-- Recommendations
+- Baseline Accuracy of 14%
+
+- Modeled KNN, Logistic Regression, Naive Bayes, and Random Forest using vectorization
+
+- Best Model: Random Forest with depth = 20 had an accuracy of  75%
+
 
 ## Deliverables:
 - A well documented Jupyter Notebook containing our group analysis
@@ -104,14 +108,13 @@ Performance on test data.
 <img src="img/rf_confmat.png" width="550"/>
 
 # Conclusion
-- In Conclusion...
+- 7 coding languages
 
-# Next Steps
-a. 
+- Baseline Random 14%
 
-b.
+- Model Random Forest Depth = 20 
 
-c.
+- Accuracy of 75%
 
 
 ## To Recreate This Project
