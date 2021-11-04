@@ -49,6 +49,8 @@
 ## Prepare
 - A prepare.py file was created with functions to process the README text data and store as a .csv 
 
+<img src="img/classvalues.png" width="150"/>
+
 ## Explore
 - Explore the data scraped from Github trending repositories:
 
