@@ -2,3 +2,5 @@
 env.py
 eli_env.py 
 src/eli_acquire.py 
+2016_trending.json
+utils.py
