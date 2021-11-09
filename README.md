@@ -8,7 +8,6 @@
 - [Executive Summary](#executive-summary)
 - [Data Dictionary](#data-dictionary)
 - [Data Science Pipeline](#data-science-pipeline)
-- [Hypotheses](#hypotheses)
 - [Results](#results)
 
 
@@ -85,14 +84,6 @@ Classification models used:
 <img src="img/cvscores.png" width="550"/>
 
 - Build a function that will take in the text of a README file, and tries to predict the programming language.
-
-# Hypotheses
-
-$H_1$ Python programmers have the most comprehensive documentation and therefore the longest readmes.
-
-$H_1$ The length of the README varies by programming language.
-
-$H_1$ Go programmers use the largest vocabulary as measured by the number of unique words.
 
 # Results
 
